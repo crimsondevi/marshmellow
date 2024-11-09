@@ -68,8 +68,14 @@ void AMarshmellowCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 }
 
 
+void AMarshmellowCharacter::SetMovementEnabled()
+{
+	bMovementEnabled = true;
+}
+
 void AMarshmellowCharacter::Move(const FInputActionValue& Value)
 {
+	if (!bMovementEnabled) { return; }
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 

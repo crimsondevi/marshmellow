@@ -49,6 +49,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* LookAction;
 
+	bool bMovementEnabled = false;
+
+	UFUNCTION(BlueprintCallable)
+	void SetMovementEnabled();
 protected:
 	/** Called for movement input */
 	void Move(const FInputActionValue& Value);
